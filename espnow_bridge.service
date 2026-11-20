@@ -1,0 +1,25 @@
+[Unit]
+Description=ESPNOW uart bridge service 
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dietpi
+WorkingDirectory=/home/dietpi/espnow_bridge/espnow_uart_bridge
+
+
+
+# === SINON (python système) ===
+ ExecStart=/usr/bin/python3 /home/dietpi/espnow_bridge/espnow_uart_bridge/bridge_espnow.py
+
+Restart=always
+RestartSec=5
+
+Environment=PYTHONUNBUFFERED=1
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

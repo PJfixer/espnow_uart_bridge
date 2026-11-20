@@ -6,7 +6,7 @@ import serial
 import threading
 import uuid
 
-SERIAL_PORT = "/dev/ttyACM0"
+SERIAL_PORT = "/dev/ttyUSB0"
 BRIDGE_SOCKET = "/tmp/espnow_bridge.sock"
 
 # Socket principal du bridge
